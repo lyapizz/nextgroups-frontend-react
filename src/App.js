@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Component} from 'react';
+import GroupResults from './components/groupResults';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    groupResults: []
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:8100/api/nextGroups')
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({groupResults: data})
+        })
+        .catch(console.log)
+  }
+
+  render() {
+    return (
+        <GroupResults groupResults={this.state.groupResults}/>
+    )
+  }
 }
 
 export default App;
