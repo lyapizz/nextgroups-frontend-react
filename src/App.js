@@ -11,7 +11,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8100/api/nextGroups')
+        fetch('https://cutshot-next-groups.herokuapp.com/api/nextGroups')
             .then(res => res.json())
             .then((data) => {
                 this.setState({groupResultsResponse: data})
