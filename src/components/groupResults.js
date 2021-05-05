@@ -1,11 +1,11 @@
 import React from 'react'
 import Groups from './groups';
 
-const GroupResults = ({groupResults}) => {
+const GroupResults = ({groupResultsResponse}) => {
 
     return (
         <div className="accordion accordion-flush" id="accordionExample">
-            {groupResults.map((groupResult, index) => (
+            {groupResultsResponse.map((groupResult, index) => (
                 <div className="accordion-item" id={'item_' + index}>
                     <h3 className="accordion-header" id={'heading_' + index}>
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="true"
