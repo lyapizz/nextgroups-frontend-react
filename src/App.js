@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {GiVolleyballBall} from "react-icons/gi"
 import GroupResults from './components/groupResults';
 
 class App extends Component {
@@ -20,11 +21,12 @@ class App extends Component {
 
     render() {
         return (
-            <div id="groupResultResponse">
-                <div className="header-left">
-                    <p className="fw-bolder fs-5">
-                        {this.state.groupResultsResponse.tournament}
-                    </p>
+            <div id="groupResultResponse" className="App container mx-auto mt-3 font-thin">
+                <div className="header-left text-4xl">
+                    {this.state.groupResultsResponse.tournament != null &&
+                    <GiVolleyballBall className="inline-block text-yellow-400 align-top"/>
+                    }
+                    {this.state.groupResultsResponse.tournament}
                 </div>
                 <GroupResults groupResultsResponse={this.state.groupResultsResponse.groupResults}/>
             </div>
