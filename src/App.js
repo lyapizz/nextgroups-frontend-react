@@ -1,4 +1,3 @@
-import './App.css';
 import React, {Component} from 'react';
 import GroupResults from './components/groupResults';
 
