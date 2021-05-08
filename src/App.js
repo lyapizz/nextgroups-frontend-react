@@ -24,9 +24,15 @@ class App extends Component {
             <div id="groupResultResponse" className="App container mx-auto mt-3">
                 <div className="header-left fs-4">
                     {this.state.groupResultsResponse.tournament != null &&
-                    <GiVolleyballBall className="inline-block text-warning align-top"/>
+                    <div className="d-flex flex-row bd-highlight mb-3">
+                        <div className="p-2 bd-highlight align-self-center">
+                            <GiVolleyballBall className="inline-block text-warning"/>
+                        </div>
+                        <div className="p-2 bd-highlight align-self-center">
+                            {this.state.groupResultsResponse.tournament}
+                        </div>
+                    </div>
                     }
-                    {this.state.groupResultsResponse.tournament}
                 </div>
                 <GroupResults groupResultsResponse={this.state.groupResultsResponse.groupResults}/>
             </div>
