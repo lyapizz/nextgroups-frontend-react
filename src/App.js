@@ -21,10 +21,10 @@ class App extends Component {
 
     render() {
         return (
-            <div id="groupResultResponse" className="App container mx-auto mt-3 font-thin">
-                <div className="header-left text-4xl">
+            <div id="groupResultResponse" className="App container mx-auto mt-3">
+                <div className="header-left fs-4">
                     {this.state.groupResultsResponse.tournament != null &&
-                    <GiVolleyballBall className="inline-block text-yellow-400 align-top"/>
+                    <GiVolleyballBall className="inline-block text-warning align-top"/>
                     }
                     {this.state.groupResultsResponse.tournament}
                 </div>
