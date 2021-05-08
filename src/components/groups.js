@@ -5,9 +5,15 @@ const Groups = ({groups}) => {
 
     return (
         <div>
-            {groups.map((group) => (
-                <table className="table table-striped table-hover">
-                    <th align="left">Group {group.id}</th>
+            {groups.map((group, index) => (
+                <table className="table table-striped table-hover" key={'table_' + index}>
+                    <thead>
+                    <tr>
+                        <td>
+                            Group {group.id}
+                        </td>
+                    </tr>
+                    </thead>
                     <Teams teams={group.teams}/>
                 </table>
             ))}

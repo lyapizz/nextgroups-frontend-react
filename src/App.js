@@ -11,7 +11,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('https://cutshot-next-groups.herokuapp.com/api/nextGroups')
+        fetch('https://cutshot-next-groups.herokuapp.com/api/nextGroups?tournament=https://cut-shot.ru/event/elagin-start')
             .then(res => res.json())
             .then((data) => {
                 this.setState({groupResultsResponse: data})
@@ -23,7 +23,9 @@ class App extends Component {
         return (
             <div id="groupResultResponse">
                 <div className="header-left">
-                    {this.state.groupResultsResponse.tournament}
+                    <p className="fw-bolder fs-5">
+                        {this.state.groupResultsResponse.tournament}
+                    </p>
                 </div>
                 <GroupResults groupResultsResponse={this.state.groupResultsResponse.groupResults}/>
             </div>

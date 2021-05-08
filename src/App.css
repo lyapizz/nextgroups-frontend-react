@@ -11,8 +11,8 @@ a {
   text-decoration: none;
 }
 
-th {
-  padding-bottom: 10px;
+tbody, td, tfoot, th, thead, tr {
+  border-style: none;
 }
 
 .header-left {
