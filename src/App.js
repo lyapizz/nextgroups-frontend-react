@@ -25,11 +25,11 @@ class App extends Component {
                 <div className="header-left fs-4">
                     {this.state.groupResultsResponse.tournament != null &&
                     <div className="d-flex flex-row bd-highlight mb-3">
-                        <div className="p-2 bd-highlight align-self-center">
-                            <GiVolleyballBall className="inline-block text-warning"/>
-                        </div>
-                        <div className="p-2 bd-highlight align-self-center">
-                            {this.state.groupResultsResponse.tournament}
+                        <div className="svg-container">
+                            <GiVolleyballBall className="text-warning"/>
+                            <div className="p-2">
+                                {this.state.groupResultsResponse.tournament}
+                            </div>
                         </div>
                     </div>
                     }

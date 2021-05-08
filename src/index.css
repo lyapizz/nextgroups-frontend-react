@@ -32,3 +32,8 @@ tbody, td, tfoot, th, thead, tr {
 .header-left {
   margin-left: 20px;
 }
+
+.svg-container {
+  display: flex;
+  align-items: center;
+}
