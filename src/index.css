@@ -37,3 +37,8 @@ tbody, td, tfoot, th, thead, tr {
   display: flex;
   align-items: center;
 }
+
+.card {
+  width: 18rem;
+  color: black;
+}

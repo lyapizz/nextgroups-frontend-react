@@ -1,43 +1,25 @@
-import React, {Component} from 'react';
-import {GiVolleyballBall} from "react-icons/gi"
-import GroupResults from './components/groupResults';
+import React, {useState} from 'react';
 
-class App extends Component {
+import Calendar from "./components/Calendar";
+import GroupPage from "./components/GroupsPage";
 
-    state = {
-        groupResultsResponse: {
-            groupResults: []
-        }
-    }
+function App() {
+    let [toggleCalendar, setToggleCalendar] = useState(true)
+    let [tournamentUrl, setTournamentUrl] = useState('')
 
-    componentDidMount() {
-        fetch('https://cutshot-next-groups-backend.herokuapp.com/api/nextGroups')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({groupResultsResponse: data})
-            })
-            .catch(console.log)
-    }
+    const tournamentUrlBase = 'http://localhost:8100/api/nextGroups?'
 
-    render() {
-        return (
-            <div id="groupResultResponse" className="App container mx-auto mt-3">
-                <div className="header-left fs-4">
-                    {this.state.groupResultsResponse.tournament != null &&
-                    <div className="d-flex flex-row bd-highlight mb-3">
-                        <div className="svg-container">
-                            <GiVolleyballBall className="text-warning"/>
-                            <div className="p-2">
-                                {this.state.groupResultsResponse.tournament}
-                            </div>
-                        </div>
-                    </div>
-                    }
-                </div>
-                <GroupResults groupResultsResponse={this.state.groupResultsResponse.groupResults}/>
-            </div>
-        )
-    }
+    return (
+        <div className="App container">
+            {toggleCalendar && <Calendar onTournamentChosen={url => {
+                setToggleCalendar(!toggleCalendar);
+                setTournamentUrl(tournamentUrlBase + 'tournament=' + url)
+            }}/>}
+            {!toggleCalendar && <GroupPage url={tournamentUrl} onBackClicked={() => {
+                setToggleCalendar(!toggleCalendar);
+            }}/>}
+        </div>
+    )
 }
 
 export default App;

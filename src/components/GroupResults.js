@@ -1,5 +1,5 @@
 import React from 'react'
-import Groups from './groups';
+import Groups from './Groups';
 
 const GroupResults = ({groupResultsResponse}) => {
 
