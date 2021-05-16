@@ -7,7 +7,7 @@ function App() {
     let [toggleCalendar, setToggleCalendar] = useState(true)
     let [tournamentUrl, setTournamentUrl] = useState('')
 
-    const tournamentUrlBase = 'http://localhost:8100/api/nextGroups?'
+    const tournamentUrlBase = 'https://cutshot-next-groups-backend.herokuapp.com/api/nextGroups?'
 
     return (
         <div className="App container">
